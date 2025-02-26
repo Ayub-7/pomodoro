@@ -23,6 +23,7 @@ export function usePomodoro(workDuration: number, breakDuration: number) {
       }, 1000)
     } else if (timeLeft === 0) {
       switchSession()
+      setProgress(0)
     }
 
     return () => {

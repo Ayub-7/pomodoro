@@ -1,5 +1,6 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"
+import { useTheme } from "next-themes" // Assuming you're using next-themes for theme management
 
 interface TimerProps {
   timeLeft: number
@@ -8,6 +9,9 @@ interface TimerProps {
 }
 
 export function Timer({ timeLeft, isWorkSession, progress }: TimerProps) {
+  const { resolvedTheme } = useTheme()
+  const isDarkMode = resolvedTheme === "dark"
+
   const minutes = Math.floor(timeLeft / 60)
   const seconds = timeLeft % 60
 
@@ -19,17 +23,16 @@ export function Timer({ timeLeft, isWorkSession, progress }: TimerProps) {
         styles={buildStyles({
           // Text size
           textSize: "16px",
-          // Colors
-          pathColor: isWorkSession ? "var(--primary)" : "var(--secondary)",
-          textColor: "var(--foreground)",
-          trailColor: "var(--muted)",
-          backgroundColor: "var(--background)",
+
+          // Colors for light/dark mode
+          pathColor: isDarkMode ? "#ffffff" : "#000000",
+          textColor: isDarkMode ? "#ffffff" : "#000000",
+          trailColor: isDarkMode ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.1)",
         })}
       />
-      <p className="text-center mt-4 text-lg font-semibold text-foreground">
+      <p className="text-center text-lg font-semibold text-foreground">
         {isWorkSession ? "Work Session" : "Break Session"}
       </p>
     </div>
   )
 }
-
