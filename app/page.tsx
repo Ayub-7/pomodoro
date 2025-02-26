@@ -9,7 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { usePomodoro } from "@/hooks/use-pomodoro"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Image from 'next/Image'
+import Image from 'next/image';
 
 interface Task {
   id: number
