@@ -16,7 +16,7 @@ export function Timer({ timeLeft, isWorkSession, progress }: TimerProps) {
   const seconds = timeLeft % 60
 
   return (
-    <div className="w-64 h-64 mx-auto mb-8">
+    <div className="w-64 h-64 mx-auto mb-20">
       <CircularProgressbar
         value={progress}
         text={`${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
@@ -30,7 +30,7 @@ export function Timer({ timeLeft, isWorkSession, progress }: TimerProps) {
           trailColor: isDarkMode ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.1)",
         })}
       />
-      <p className="text-center text-lg font-semibold text-foreground">
+      <p className="text-center text-lg font-semibold text-foreground mt-6">
         {isWorkSession ? "Work Session" : "Break Session"}
       </p>
     </div>

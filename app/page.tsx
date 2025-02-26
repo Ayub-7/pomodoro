@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { usePomodoro } from "@/hooks/use-pomodoro"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from 'next/Image'
 
 interface Task {
   id: number
@@ -49,7 +50,16 @@ export default function PomodoroTimer() {
     <div className="container mx-auto p-4">
       <Card className="max-w-2xl mx-auto">
         <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-2xl font-bold">Pomodoro Timer</CardTitle>
+          <CardTitle className="text-2xl font-bold flex items-center">
+            Pomodoro Timer
+            <Image
+              width={30}
+              height={30}
+              alt="User Profile Image"
+              src="/tomato.png"
+              className="ml-2"
+            />
+          </CardTitle>
           <ThemeToggle />
         </CardHeader>
         <CardContent>

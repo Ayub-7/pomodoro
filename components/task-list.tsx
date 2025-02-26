@@ -35,7 +35,13 @@ export function TaskList({ tasks, addTask, toggleTask, removeTask }: TaskListPro
   return (
     <div className="space-y-4">
       <form onSubmit={handleSubmit} className="flex space-x-2">
-        <Input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Add a new task" />
+        <Input
+          type="text"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          placeholder="Add a new task"
+          className="bg-input-background text-input-foreground"
+        />
         <Button type="submit">
           <Plus className="mr-2 h-4 w-4" /> Add
         </Button>
