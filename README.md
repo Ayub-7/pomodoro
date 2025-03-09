@@ -21,35 +21,12 @@ The Pomodoro Timer is a productivity tool that helps users manage their time eff
 - Node.js (version 14 or higher)
 
 ### Installation
-1. Clone the repository:
+Install the dependencies:
    ```bash
-   git clone https://github.com/yourusername/pomodoro.git
-   cd pomodoro
-   ```
-
-2. Install the dependencies:
-   ```bash
-   npm install
-   ```
-   or if you are using Yarn:
-   ```bash
-   yarn install
-   ```
-   or if you are using pnpm:
-   ```bash
-   pnpm i
+   pnpm install
    ```
 
 ### Running the Application
-To run the application locally, use the following command:
-```bash
-npm run dev
-```
-or with Yarn:
-```bash
-yarn dev
-```
-or with pnpm:
 ```bash
 pnpm dev
 ```
